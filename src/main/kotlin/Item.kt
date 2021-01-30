@@ -1,0 +1,18 @@
+enum class Item {
+  LEATHER,
+  LINEN,
+  SILK,
+  WOOL,
+  COPPER,
+  GOLD,
+  IRON,
+  SILVER,
+  AXE,
+  DAGGER,
+  MACE,
+  SWORD,
+  CHERRY_BLOSSOM,
+  MARIGOLD,
+  ROSE,
+  SEAWEED;
+}
