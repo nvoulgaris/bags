@@ -50,6 +50,9 @@ class Spell {
     belongings.backpack = mutableListOf()
   }
 
-  private fun organizeAll(belongings: Belongings, category: Category): MutableList<Item> =
-    belongings.backpack.filter { itemsByCategory[it] == category }.sorted().toMutableList()
+  private fun organizeAll(belongings: Belongings, category: Category): MutableList<Item> {
+    val itemsInCategory = belongings.backpack.filter { itemsByCategory[it] == category }.sorted().take(4).toMutableList()
+    belongings.backpack = belongings.backpack.minus(itemsInCategory).toMutableList()
+    return itemsInCategory
+  }
 }
