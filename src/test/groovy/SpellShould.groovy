@@ -97,14 +97,14 @@ class SpellShould extends Specification {
 
   def "add up to 4 items in a bag"() {
     given:
-    belongings.addToBackpack([LINEN, LEATHER, SILK, WOOL, SILK])
+      belongings.addToBackpack([LINEN, LEATHER, SILK, WOOL, SILK])
     when:
-    spell.castTo(belongings)
+      spell.castTo(belongings)
     then:
-    belongings.backpack == [WOOL]
-    belongings.bagWithClothes == [LEATHER, LINEN, SILK, SILK]
-    belongings.bagWithMetals == []
-    belongings.bagWithWeapons == []
-    belongings.bagWithHerbs == []
+      belongings.backpack == [WOOL]
+      belongings.bagWithClothes == [LEATHER, LINEN, SILK, SILK]
+      belongings.bagWithMetals == []
+      belongings.bagWithWeapons == []
+      belongings.bagWithHerbs == []
   }
 }
