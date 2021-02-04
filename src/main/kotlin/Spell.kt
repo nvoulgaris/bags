@@ -47,7 +47,6 @@ class Spell {
     belongings.bagWithClothes = organizeAll(belongings, CLOTHES)
     belongings.bagWithWeapons = organizeAll(belongings, WEAPONS)
     belongings.bagWithHerbs = organizeAll(belongings, HERBS)
-    belongings.backpack = mutableListOf()
   }
 
   private fun organizeAll(belongings: Belongings, category: Category): MutableList<Item> {

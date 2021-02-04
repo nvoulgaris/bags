@@ -7,6 +7,12 @@ import static Item.IRON
 import static Item.LEATHER
 import static Item.LINEN
 import static Item.ROSE
+import static Item.SILK
+import static Item.SILK
+import static Item.SILK
+import static Item.SILK
+import static Item.WOOL
+import static Item.WOOL
 
 import spock.lang.Specification
 
@@ -87,5 +93,18 @@ class SpellShould extends Specification {
       belongings.bagWithMetals == [COPPER, GOLD]
       belongings.bagWithWeapons == [AXE, DAGGER]
       belongings.bagWithHerbs == [CHERRY_BLOSSOM, ROSE]
+  }
+
+  def "add up to 4 items in a bag"() {
+    given:
+    belongings.addToBackpack([LINEN, LEATHER, SILK, WOOL, SILK])
+    when:
+    spell.castTo(belongings)
+    then:
+    belongings.backpack == [WOOL]
+    belongings.bagWithClothes == [LEATHER, LINEN, SILK, SILK]
+    belongings.bagWithMetals == []
+    belongings.bagWithWeapons == []
+    belongings.bagWithHerbs == []
   }
 }
